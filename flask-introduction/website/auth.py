@@ -19,7 +19,7 @@ def sign_up():
        password1 = request.form.get('password1')
        password2 = request.form.get('password2')
 
-       if len(email) > 4:
+       if len(email) < 4:
            flash('Email invalid')
        elif len(firstName) < 2:
            flash('Name is too short')
