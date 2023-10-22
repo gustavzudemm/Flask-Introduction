@@ -21,7 +21,7 @@ def login():
             else:
                 flash('Incorrect password, try again.', category='error')
 
-    return render_template("login.html", text="Test")
+    return render_template("login.html", user=current_user)
 
 @auth.route('/logout')
 @login_required
@@ -57,4 +57,4 @@ def sign_up():
            login_user(user, remember=True)
            return redirect(url_for('views.home'))
            
-    return render_template("signup.html")
+    return render_template("signup.html", user=current_user)
